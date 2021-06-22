@@ -7,6 +7,7 @@ const Quote = (props) => {
   return (
     <>
       <h2>Kanye once said: {props.quote} </h2>
+      <button onClick={props.fetchQuote} >New quote</button>
     </>
   )
 }

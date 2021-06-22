@@ -5,7 +5,8 @@ const FETCH_QUOTE_SAD = 'FETCH_QUOTE_SAD';
 
 export const fetchQuote = () => (dispatch) => {
   // Hit the api (axios)
-  dispatch({ type: FETCH_QUOTE_START });
+  dispatch({ type: FETCH_QUOTE_START }); // loading = true, display spinner
+
 
   // Then, if it's happy, save the response to state.quoteReducer.quote
 

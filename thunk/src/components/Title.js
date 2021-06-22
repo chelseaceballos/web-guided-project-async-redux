@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toggleEditing, updateTitle } from "../actions/titleActions";
 
 const Title = () => {
   const [title, setTitle] = useState("Async Redux Party");
@@ -46,7 +47,8 @@ const mapState = (state) => {
   }
 }
 
+const mapDispatch = {updateTitle, toggleEditing}
+
 
 // Step 3: connect components to the Redux store
-// export default connect(mapState, mapDispatch)(Title);
-export default Title;
+export default connect(mapState, mapDispatch)(Title);

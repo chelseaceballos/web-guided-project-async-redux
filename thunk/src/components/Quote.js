@@ -6,7 +6,7 @@ const Quote = (props) => {
   useEffect(() => { props.fetchQuote(); }, []); // empty dep array for componentDidMount
   return (
     <>
-      <h2>Kanye says: {props.quote} </h2>
+      <h2>Kanye once said: {props.quote} </h2>
     </>
   )
 }

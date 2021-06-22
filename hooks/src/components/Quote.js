@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchQuote } from "../actions/quoteActions";
 
 const Quote = (props) => {
   useEffect(() => { fetchQuote(); }, []); // empty dep array for componentDidMount
   const { quote, loading } = useSelector((state) => state.quoteReducer);
+  const dispatch = useDispatch();
 
 
   if (loading) {

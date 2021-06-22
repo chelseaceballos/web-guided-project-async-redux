@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { toggleEditing, updateTitle } from "../actions/titleActions";
 
-const Title = () => {
-  const [title, setTitle] = useState("Async Redux Party");
-  const [editing, setEditing] = useState(false);
+const Title = (props) => {
   const [newTitleText, setNewTitleText] = useState("");
 
   const handleChanges = e => {
@@ -14,7 +12,7 @@ const Title = () => {
     <div>
       {!editing ? (
         <h1>
-          {title}{" "}
+          {props.title}{" "}
           <i onClick={() => setEditing(!editing)} className="far fa-edit" />
         </h1>
       ) : (

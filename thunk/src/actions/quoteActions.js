@@ -6,9 +6,13 @@ const FETCH_QUOTE_SAD = 'FETCH_QUOTE_SAD';
 export const fetchQuote = () => (dispatch) => {
   // Hit the api (axios)
   dispatch({ type: FETCH_QUOTE_START }); // loading = true, display spinner
-
+  axios.get("https://api.kanye.rest/")
 
   // Then, if it's happy, save the response to state.quoteReducer.quote
+    .then(res => { console.log(res) })
 
   // If it's sad, catch the error message and save it to state.quoteReducer.error
+  .catch(err => {
+    
+  })
 }

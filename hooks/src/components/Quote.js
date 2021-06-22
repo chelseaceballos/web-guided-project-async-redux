@@ -7,8 +7,6 @@ const Quote = (props) => {
   const dispatch = useDispatch();
   useEffect(() => { fetchQuote(dispatch); }, []); // empty dep array for componentDidMount
 
-
-
   if (loading) {
     return <><h2>Loading..</h2></>
   }

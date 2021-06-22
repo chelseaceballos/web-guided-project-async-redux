@@ -1,3 +1,5 @@
+import { TOGGLE_EDITING, UPDATE_TITLE } from "../actions/titleActions";
+
 const initialState = {
   editing: false,
   title: 'WEBPT28 Thunky Reducer fiesta'
@@ -5,12 +7,12 @@ const initialState = {
 
 export const titleReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'TOGGLE_EDITING':
+    case TOGGLE_EDITING:
       return {
         ...state,
         editing: !state.editing
       }
-    case 'UPDATE_TITLE':
+    case UPDATE_TITLE:
       return {
         ...state,
         title: action.payload,

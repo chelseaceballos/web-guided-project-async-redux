@@ -3,7 +3,7 @@ export const FETCH_QUOTE_START = 'FETCH_QUOTE_START';
 export const FETCH_QUOTE_HAPPY = 'FETCH_QUOTE_HAPPY';
 export const FETCH_QUOTE_SAD = 'FETCH_QUOTE_SAD';
 
-export const fetchQuote = () => (dispatch) => {
+export const fetchQuote = (dispatch) =>  {
   // Hit the api (axios)
   dispatch({ type: FETCH_QUOTE_START }); // loading = true, display spinner
   axios.get("https://api.kanye.rest/")

@@ -16,7 +16,7 @@ export const titleReducer = (state = initialState, action) => {
       return {
         ...state,
         title: action.payload,
-        edtiting: false
+        editing: false
       }
     default:
       return state;

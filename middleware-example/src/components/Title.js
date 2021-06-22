@@ -53,7 +53,9 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(
+const decorate = connect(
   mapStateToProps,
   { updateTitle } // same as { updateTitle: updateTitle }
-)(Title);
+);
+
+export default decorate(Title);

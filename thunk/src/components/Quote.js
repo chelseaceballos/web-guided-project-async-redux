@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
+import { fetchQuote } from "../actions/quoteActions";
 
 const Quote = (props) => {
   useEffect(() => { props.getQuote();}, [])
@@ -16,4 +17,4 @@ const mapStatetoProps = (state) => {
   }
 }
 
-export default connect(mapStatetoProps)(Quote);
+export default connect(mapStatetoProps, {fetchQuote})(Quote);

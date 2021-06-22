@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 
 const Quote = (props) => {
   return (
@@ -8,4 +9,4 @@ const Quote = (props) => {
   )
 }
 
-export default Quote;
+export default connect(mapStateToProps)(Quote);

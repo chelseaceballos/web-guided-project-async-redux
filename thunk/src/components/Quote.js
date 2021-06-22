@@ -9,4 +9,8 @@ const Quote = (props) => {
   )
 }
 
+const mapStatetoProps = (state) => {
+  quote: state.quoteReducer.quote
+}
+
 export default connect(mapStateToProps)(Quote);

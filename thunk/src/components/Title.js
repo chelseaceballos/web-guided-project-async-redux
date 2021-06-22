@@ -39,6 +39,13 @@ const Title = () => {
   );
 };
 
+const mapState = (state) => {
+  return {
+    editing: state.editing,
+    title: state.title
+  }
+}
+
 
 // Step 3: connect components to the Redux store
 // export default connect(mapState, mapDispatch)(Title);

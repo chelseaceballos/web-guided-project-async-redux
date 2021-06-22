@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const fetchQuote = () => {
+export const fetchQuote = () => (dispatch) => {
   // Hit the api (axios)
 
   // Then, if it's happy, save the response to state.quoteReducer.quote

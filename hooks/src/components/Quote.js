@@ -16,6 +16,8 @@ const Quote = (props) => {
   )
 }
 
+// Step 3: connect components (we can use React Redux hooks instead of connect if we'd like to, for function components only)
+
 const mapStatetoProps = (state) => {
   return {
     quote: state.quoteReducer.quote,

@@ -6,11 +6,11 @@ import logger from "redux-logger";
 
 import Title from "./components/Title";
 import Quote from "./components/Quote";
-import { titleReducer } from "./reducers/titleReducer";
 import "./styles.css";
+import rootReducer from "./reducers";
 
 // Step 1: create the Redux store
-const store = createStore(titleReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 function App() {
   return (

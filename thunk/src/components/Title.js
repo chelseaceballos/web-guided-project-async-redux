@@ -13,7 +13,7 @@ const Title = (props) => {
       {!editing ? (
         <h1>
           {props.title}{" "}
-          <i onClick={() => setEditing(!editing)} className="far fa-edit" />
+          <i onClick={() => props.toggleEditing()} className="far fa-edit" />
         </h1>
       ) : (
         <div>
@@ -25,10 +25,7 @@ const Title = (props) => {
             onChange={handleChanges}
           />
           <button
-            onClick={() => {
-              setTitle(newTitleText);
-              setEditing(false);
-            }}
+            onClick={() => {() => props.updateTitle(newTitleText)}}
           >
             Update title
           </button>

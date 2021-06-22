@@ -11,7 +11,7 @@ export const fetchQuote = () => (dispatch) => {
   // Then, if it's happy, save the response to state.quoteReducer.quote
     .then(res => {
       console.log(res);
-      dispatch({ type: FETCH_QUOTE_HAPPY, payload: res.quote });
+      dispatch({ type: FETCH_QUOTE_HAPPY, payload: res.data.quote });
     })
 
   // If it's sad, catch the error message and save it to state.quoteReducer.error

@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import logger from "redux-logger";
 
 import Title from "./components/Title";
+import Quote from "./components/Quote";
 import { titleReducer } from "./reducers/titleReducer";
 import "./styles.css";
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Title />
+      <Quote />
     </div>
   );
 }

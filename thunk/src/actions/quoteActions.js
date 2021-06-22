@@ -9,10 +9,14 @@ export const fetchQuote = () => (dispatch) => {
   axios.get("https://api.kanye.rest/")
 
   // Then, if it's happy, save the response to state.quoteReducer.quote
-    .then(res => { console.log(res) })
+    .then(res => {
+      console.log(res);
+      dispatch({ type: FETCH_QUOTE_HAPPY, payload: res.quote });
+    })
 
   // If it's sad, catch the error message and save it to state.quoteReducer.error
   .catch(err => {
-    
+    console.log(err);
+    dispatch({ type: FETCH_QUOTE_SAD, payload: err });
   })
 }

@@ -39,4 +39,7 @@ const Title = () => {
   );
 };
 
+
+// Step 3: connect components to the Redux store
+// export default connect(mapState, mapDispatch)(Title);
 export default Title;

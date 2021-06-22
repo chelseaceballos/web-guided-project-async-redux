@@ -1,7 +1,7 @@
 import { TOGGLE_EDITING, UPDATE_TITLE } from "../actions/titleActions";
 
 const initialState = {
-    quote: '',
+    quote: 'Initial test kanye quote',
     loading: false,
     error: ''
 };

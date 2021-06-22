@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { toggleEditing, updateTitle } from "../actions/titleActions";
 
-const Title = () => {
-  const [title, setTitle] = useState("Async Redux Party");
-  const [editing, setEditing] = useState(false);
+const Title = (props) => {
   const [newTitleText, setNewTitleText] = useState("");
 
   const handleChanges = e => {
@@ -11,10 +11,10 @@ const Title = () => {
 
   return (
     <div>
-      {!editing ? (
+      {!props.editing ? (
         <h1>
-          {title}{" "}
-          <i onClick={() => setEditing(!editing)} className="far fa-edit" />
+          {props.title}{" "}
+          <i onClick={() => props.toggleEditing()} className="far fa-edit" />
         </h1>
       ) : (
         <div>
@@ -26,10 +26,7 @@ const Title = () => {
             onChange={handleChanges}
           />
           <button
-            onClick={() => {
-              setTitle(newTitleText);
-              setEditing(false);
-            }}
+            onClick={() => props.updateTitle(newTitleText)}
           >
             Update title
           </button>
@@ -39,4 +36,15 @@ const Title = () => {
   );
 };
 
-export default Title;
+const mapState = (state) => {
+  return {
+    editing: state.titleReducer.editing,
+    title: state.titleReducer.title
+  }
+}
+
+const mapDispatch = {updateTitle, toggleEditing}
+
+
+// Step 3: connect components to the Redux store
+export default connect(mapState, mapDispatch)(Title);

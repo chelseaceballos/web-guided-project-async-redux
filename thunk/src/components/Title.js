@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { toggleEditing, updateTitle } from "../actions/titleActions";
 
 const Title = (props) => {
@@ -10,7 +11,7 @@ const Title = (props) => {
 
   return (
     <div>
-      {!editing ? (
+      {!props.editing ? (
         <h1>
           {props.title}{" "}
           <i onClick={() => props.toggleEditing()} className="far fa-edit" />
@@ -25,7 +26,7 @@ const Title = (props) => {
             onChange={handleChanges}
           />
           <button
-            onClick={() => {() => props.updateTitle(newTitleText)}}
+            onClick={() => props.updateTitle(newTitleText)}
           >
             Update title
           </button>

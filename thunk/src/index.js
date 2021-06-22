@@ -8,9 +8,10 @@ import Title from "./components/Title";
 import Quote from "./components/Quote";
 import "./styles.css";
 import rootReducer from "./reducers";
+import thunk from "redux-thunk";
 
 // Step 1: create the Redux store
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 
 function App() {
   return (

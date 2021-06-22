@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 const Quote = (props) => {
+  useEffect(() => { props.getQuote();}, [])
   return (
     <>
       <h2>Kanye says: {props.quote} </h2>

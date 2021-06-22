@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { fetchQuote } from "../actions/quoteActions";
 
 const Quote = (props) => {
-  useEffect(() => { props.fetchQuote(); }, []); // empty dep array for componentDidMount
-  const quote = useSelector((state) => state.quoteReducer.quote);
-  const quote = useSelector((state) => state.quoteReducer.quote);
-  const quote = useSelector((state) => state.quoteReducer.quote);
+  useEffect(() => { fetchQuote(); }, []); // empty dep array for componentDidMount
+  const { quote, loading } = useSelector((state) => state.quoteReducer);
 
 
-  if (props.loading) {
+  if (loading) {
     return <><h2>Loading..</h2></>
   }
   return (
     <>
-      <h2>Kanye once said: {props.quote} </h2>
-      <button onClick={props.fetchQuote} >New quote</button>
+      <h2>Kanye once said: {quote} </h2>
+      <button onClick={fetchQuote} >New quote</button>
     </>
   )
 }

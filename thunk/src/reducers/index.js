@@ -20,9 +20,20 @@ export const reducer = (state = initialState, action) => {
     case("FETCH_START"):
       return({
         ...state,
-        isFetching: false,
+        isFetching: true,
         error: ''
       });
+    case("FETCH_SUCCESS"):
+      return({
+        ...state,
+        person: action.payload,
+        isFetching: false
+      });
+    case("FETCH_FAIL"):
+      return({
+        ...state,
+
+      })
     default:
       return state;
   }

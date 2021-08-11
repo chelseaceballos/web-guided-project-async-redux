@@ -14,7 +14,7 @@ const initialState = {
     }
   },
   isFetching: false,
-  error: 'This is an error'
+  error: ''
 };
 
 export const reducer = (state = initialState, action) => {

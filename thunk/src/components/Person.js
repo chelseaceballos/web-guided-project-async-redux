@@ -17,6 +17,7 @@ const Person = (props) => {
   }
 
   const handleClick = ()=> {
+    
     props.fetchStart();
     axios.get('https://randomuser.me/api')
       .then(res=>{
@@ -25,10 +26,6 @@ const Person = (props) => {
       .catch(err => {
         props.fetchFail(err);
       })
-    //1. dispatch fetchStart.
-    //2. axios call for person
-    //3. if axios call is successful, dispatch fetchSuccess.
-    //4. if axios call is not successful, dispatch fetchFail.
   }
 
   return (

@@ -1,5 +1,7 @@
 export const getPerson = () => {
-
+    return (dispatch) => {
+        
+    }
 }
 
 

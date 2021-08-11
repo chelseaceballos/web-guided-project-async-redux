@@ -5,9 +5,19 @@ import axios from 'axios';
 
 const Person = (props) => {
   const { person, isFetching, error } = props;
-  useEffect(() => {
-  });
+  
+  useEffect(()=> {
+    props.fetchStart();
+    axios.get('https://randomuser.me/api')
+      .then(res=>{
+        props.fetchSuccess(res.data.results[0]);
+      })
+      .catch(err => {
+        props.fetchFail(err);
+      })
+  }, []);
 
+  
   if (error) {
     return <h2>We got an error: {error}</h2>;
   }
@@ -15,17 +25,6 @@ const Person = (props) => {
   if (isFetching) {
     return <h2>Fetching person for ya!</h2>;
   }
-
-  useEffect(()=> {
-    props.fetchStart();
-    // axios.get('https://randomuser.me/api')
-    //   .then(res=>{
-    //     props.fetchSuccess(res.data.results[0]);
-    //   })
-    //   .catch(err => {
-    //     props.fetchFail(err);
-    //   })
-  }, []);
 
   const handleClick = ()=> {
     props.fetchStart();

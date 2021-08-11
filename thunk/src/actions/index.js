@@ -1,5 +1,4 @@
 export const FETCH_START = "FETCH_START";
-
 export const fetchStart = ()=> {
     return({type: FETCH_START});
 }
@@ -11,3 +10,6 @@ export const fetchSuccess = (person)=> {
 }
 
 export const FETCH_FAIL = "FETCH_FAIL";
+export const fetchFail = (error)=> {
+    return({type: FETCH_FAIL, payload: error});
+}

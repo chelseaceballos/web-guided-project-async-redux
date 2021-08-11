@@ -17,7 +17,6 @@ const Person = (props) => {
   }
 
   const handleClick = ()=> {
-    
     props.fetchStart();
     axios.get('https://randomuser.me/api')
       .then(res=>{

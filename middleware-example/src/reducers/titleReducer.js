@@ -5,9 +5,6 @@ const initialState = {
 };
 
 export function titleReducer(state = initialState, action) {
-  console.log("current state: ", state);
-  console.log("current action: ", action);
-  console.log("-----------------");
   switch (action.type) {
     case UPDATE_TITLE:
       return {

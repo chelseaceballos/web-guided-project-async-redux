@@ -32,7 +32,8 @@ export const reducer = (state = initialState, action) => {
     case("FETCH_FAIL"):
       return({
         ...state,
-
+        error: action.payload,
+        isFetching: false
       })
     default:
       return state;

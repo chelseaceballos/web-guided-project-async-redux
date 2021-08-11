@@ -14,7 +14,7 @@ const Person = (props) => {
       })
       .catch(err => {
         props.fetchFail(err);
-      })
+      });
   }, []);
 
   if (error) {
@@ -33,7 +33,7 @@ const Person = (props) => {
       })
       .catch(err => {
         props.fetchFail(err);
-      })
+      });
   }
 
   return (

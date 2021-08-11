@@ -29,9 +29,9 @@ const Person = (props) => {
         <img src={person.picture.large}/>
       </div>
       <button onClick={handleClick}>Get new person</button>
-      <button onClick=()=> {
-        
-      }> Error Button</button>
+      <button onClick={()=> {
+        props.fetchFail("Pressed the Error button!!!");
+      }}> Error Button</button>
     </>
   );
 };

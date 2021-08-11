@@ -7,14 +7,7 @@ const Person = (props) => {
   const { person, isFetching, error } = props;
   
   useEffect(()=> {
-    props.fetchStart();
-    axios.get('https://randomuser.me/api')
-      .then(res=>{
-        props.fetchSuccess(res.data.results[0]);
-      })
-      .catch(err => {
-        props.fetchFail(err);
-      });
+    props.getPerson();
   }, []);
 
   if (error) {
@@ -26,14 +19,7 @@ const Person = (props) => {
   }
 
   const handleClick = ()=> {
-    props.fetchStart();
-    axios.get('https://randomuser.me/api')
-      .then(res=>{
-        props.fetchSuccess(res.data.results[0]);
-      })
-      .catch(err => {
-        props.fetchFail(err);
-      });
+    props.getPerson();
   }
 
   return (

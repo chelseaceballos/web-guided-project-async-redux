@@ -16,6 +16,17 @@ const Person = (props) => {
     return <h2>Fetching person for ya!</h2>;
   }
 
+  useEffect(()=> {
+    props.fetchStart();
+    // axios.get('https://randomuser.me/api')
+    //   .then(res=>{
+    //     props.fetchSuccess(res.data.results[0]);
+    //   })
+    //   .catch(err => {
+    //     props.fetchFail(err);
+    //   })
+  }, []);
+
   const handleClick = ()=> {
     props.fetchStart();
     axios.get('https://randomuser.me/api')

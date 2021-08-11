@@ -16,7 +16,10 @@ const Person = ({ person, isFetching, error }) => {
   }
 
   const handleClick = ()=> {
-    console.log("clicking!!!");
+    //1. dispatch fetchStart.
+    //2. axios call for person
+    //3. if axios call is successful, dispatch fetchSuccess.
+    //4. if axios call is not successful, dispatch fetchFail.
   }
 
   return (

@@ -20,7 +20,10 @@ const Person = (props) => {
     props.fetchStart();
     axios.get('https://randomuser.me/api')
       .then(res=>{
-        console.log(res.data.results[0]);
+        props.fetchSuccess(res.data.results[0]);
+      })
+      .catch(err => {
+        props.fetchFail(err);
       })
     //1. dispatch fetchStart.
     //2. axios call for person

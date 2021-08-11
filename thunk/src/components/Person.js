@@ -3,7 +3,8 @@ import { fetchStart, fetchSuccess, fetchFail} from './../actions';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-const Person = ({ person, isFetching, error }) => {
+const Person = (props) => {
+  const { person, isFetching, error } = props;
   useEffect(() => {
   });
 

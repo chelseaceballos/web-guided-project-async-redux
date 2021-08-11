@@ -17,7 +17,6 @@ const Person = (props) => {
       })
   }, []);
 
-  
   if (error) {
     return <h2>We got an error: {error}</h2>;
   }

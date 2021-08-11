@@ -18,6 +18,10 @@ const Person = (props) => {
 
   const handleClick = ()=> {
     props.fetchStart();
+    axios.get('https://randomuser.me/api')
+      .then(res=>{
+        console.log(res.data);
+      })
     //1. dispatch fetchStart.
     //2. axios call for person
     //3. if axios call is successful, dispatch fetchSuccess.

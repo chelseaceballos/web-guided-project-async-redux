@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { getPerson } from './../actions';
+import { getPerson, fetchFail } from './../actions';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -41,4 +41,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { getPerson })(Person);
+export default connect(mapStateToProps, { getPerson, fetchFail })(Person);

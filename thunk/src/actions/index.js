@@ -1,6 +1,13 @@
 export const getPerson = () => {
     return (dispatch) => {
-        
+        dispatch({type: FETCH_START});
+        axios.get('https://randomuser.me/api')
+        .then(res=>{
+            props.fetchSuccess(res.data.results[0]);
+        })
+        .catch(err => {
+            props.fetchFail(err);
+        });
     }
 }
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchStart, fetchSuccess, fetchFail} from './../actions';
 import { connect } from 'react-redux';
-
+import axios from 'axios';
 
 const Person = ({ person, isFetching, error }) => {
   useEffect(() => {
@@ -16,6 +16,7 @@ const Person = ({ person, isFetching, error }) => {
   }
 
   const handleClick = ()=> {
+    props.fetchStart();
     //1. dispatch fetchStart.
     //2. axios call for person
     //3. if axios call is successful, dispatch fetchSuccess.
